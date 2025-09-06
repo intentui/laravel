@@ -18,6 +18,7 @@ Homestead.yaml
 auth.json
 npm-debug.log
 yarn-error.log
+/tests/Browser/Screenshots
 .github_token
 /.fleet
 /.idea
