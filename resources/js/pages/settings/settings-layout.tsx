@@ -54,7 +54,7 @@ export function NavLink({ isCurrent, className, ...props }: NavLinkProps) {
       textValue={props.children as string}
       className={cx(
         "block py-2 font-medium text-sm",
-        isCurrent ? "font-semibold text-fg" : "text-muted-fg hover:text-fg",
+        isCurrent ? "font-semibold text-foreground" : "text-muted-foreground hover:text-foreground",
         className,
       )}
       {...props}

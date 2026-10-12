@@ -105,13 +105,13 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="font-semibold text-fg text-sm leading-6">Solutions</h3>
+                <h3 className="font-semibold text-foreground text-sm leading-6">Solutions</h3>
                 <ul className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-muted-fg text-sm leading-6 hover:text-fg"
+                        className="text-muted-foreground text-sm leading-6 hover:text-foreground"
                       >
                         {item.name}
                       </Link>
@@ -120,13 +120,13 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="font-semibold text-fg text-sm leading-6">Support</h3>
+                <h3 className="font-semibold text-foreground text-sm leading-6">Support</h3>
                 <ul className="mt-6 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-muted-fg text-sm leading-6 hover:text-fg"
+                        className="text-muted-foreground text-sm leading-6 hover:text-foreground"
                       >
                         {item.name}
                       </Link>
@@ -137,13 +137,13 @@ export function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="font-semibold text-fg text-sm leading-6">Company</h3>
+                <h3 className="font-semibold text-foreground text-sm leading-6">Company</h3>
                 <ul className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-muted-fg text-sm leading-6 hover:text-fg"
+                        className="text-muted-foreground text-sm leading-6 hover:text-foreground"
                       >
                         {item.name}
                       </Link>
@@ -152,13 +152,13 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="font-semibold text-fg text-sm leading-6">Legal</h3>
+                <h3 className="font-semibold text-foreground text-sm leading-6">Legal</h3>
                 <ul className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-muted-fg text-sm leading-6 hover:text-fg"
+                        className="text-muted-foreground text-sm leading-6 hover:text-foreground"
                       >
                         {item.name}
                       </Link>
@@ -170,10 +170,10 @@ export function Footer() {
           </div>
           <div className="mt-10 flex flex-col xl:mt-0">
             <div className="mb-6 flex-1">
-              <h3 className="font-semibold text-fg text-sm leading-6">
+              <h3 className="font-semibold text-foreground text-sm leading-6">
                 Subscribe to our newsletter
               </h3>
-              <p className="mt-2 text-muted-fg text-sm leading-6">
+              <p className="mt-2 text-muted-foreground text-sm leading-6">
                 The latest news, articles, and resources, sent to your inbox weekly.
               </p>
               <form className="mt-6 sm:flex sm:max-w-md">
@@ -200,16 +200,20 @@ export function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-muted-fg hover:text-fg [&>svg]:h-5 [&>svg]:w-5 [&>svg]:stroke-[1.5]"
+                className="text-muted-foreground hover:text-foreground [&>svg]:h-5 [&>svg]:w-5 [&>svg]:stroke-[1.5]"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon aria-hidden="true" />
               </Link>
             ))}
           </div>
-          <p className="mt-8 text-muted-fg text-xs leading-5 md:order-1 md:mt-0">
+          <p className="mt-8 text-muted-foreground text-xs leading-5 md:order-1 md:mt-0">
             &copy; 2020 Inertia.ts by{" "}
-            <Link target="_blank" href="https://x.com/intentui" className="font-semibold text-fg">
+            <Link
+              target="_blank"
+              href="https://x.com/intentui"
+              className="font-semibold text-foreground"
+            >
               Intent UI
             </Link>
             , Inc. All rights reserved.

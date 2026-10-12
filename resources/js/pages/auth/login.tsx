@@ -20,7 +20,7 @@ export default function Login(args: LoginProps) {
     <>
       <Head title="Log in" />
 
-      {status && <div className="mb-4 font-medium text-success-subtle-fg">{status}</div>}
+      {status && <div className="mb-4 font-medium text-success-subtle-foreground">{status}</div>}
 
       <Form
         method="post"
@@ -45,7 +45,7 @@ export default function Login(args: LoginProps) {
               {canResetPassword && (
                 <Link
                   href="/forgot-password"
-                  className="text-base/6 text-primary-subtle-fg hover:underline sm:text-sm/6"
+                  className="text-base/6 text-primary-subtle-foreground hover:underline sm:text-sm/6"
                 >
                   Forgot your password?
                 </Link>
@@ -58,7 +58,7 @@ export default function Login(args: LoginProps) {
             <div className="text-center">
               <Link
                 href="/register"
-                className="text-base/6 text-primary-subtle-fg hover:underline sm:text-sm/6"
+                className="text-base/6 text-primary-subtle-foreground hover:underline sm:text-sm/6"
               >
                 Dont have account? Register
               </Link>

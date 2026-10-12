@@ -57,20 +57,20 @@ export function Checkbox({ className, children, ...props }: CheckboxProps) {
               <span
                 data-slot="indicator"
                 className={twMerge([
-                  "relative inset-ring inset-ring-input isolate flex shrink-0 items-center justify-center rounded bg-(--control-bg,transparent) text-bg transition group-hover:inset-ring-muted-fg/30",
+                  "relative inset-ring inset-ring-input isolate flex shrink-0 items-center justify-center rounded bg-(--control-bg,transparent) text-background transition group-hover:inset-ring-muted-foreground/30",
                   "sm:size-4 sm:*:data-[slot=check-indicator]:size-3.5",
                   "size-4.5 *:data-[slot=check-indicator]:size-4",
                   "in-disabled:bg-muted",
                   (isSelected || isIndeterminate) && [
-                    "inset-ring-(--checkbox-ring,var(--color-ring)) bg-(--checkbox-bg,var(--color-primary)) text-(--checkbox-fg,var(--color-primary-fg))",
-                    "group-invalid:inset-ring/70 group-invalid:bg-danger group-invalid:text-danger-fg dark:group-invalid:inset-ring-danger-subtle-fg/70",
+                    "inset-ring-(--checkbox-ring,var(--color-ring)) bg-(--checkbox-bg,var(--color-primary)) text-(--checkbox-foreground,var(--color-primary-foreground))",
+                    "group-invalid:inset-ring/70 group-invalid:bg-danger group-invalid:text-danger-foreground dark:group-invalid:inset-ring-danger-subtle-foreground/70",
                   ],
                   isFocusVisible && [
                     "inset-ring-(--checkbox-ring,var(--color-ring)) ring-(--checkbox-ring,var(--color-ring))/20 ring-3",
-                    "group-invalid:inset-ring-danger-subtle-fg/70 group-invalid:text-danger-fg group-invalid:ring-danger-subtle-fg/20",
+                    "group-invalid:inset-ring-danger-subtle-foreground/70 group-invalid:text-danger-foreground group-invalid:ring-danger-subtle-foreground/20",
                   ],
                   isInvalid &&
-                    "inset-ring-danger-subtle-fg/70 bg-danger-subtle/5 text-danger-fg ring-danger-subtle-fg/20 group-hover:inset-ring-danger-subtle-fg/70",
+                    "inset-ring-danger-subtle-foreground/70 bg-danger-subtle/5 text-danger-foreground ring-danger-subtle-foreground/20 group-hover:inset-ring-danger-subtle-foreground/70",
                 ])}
               >
                 {indicator}

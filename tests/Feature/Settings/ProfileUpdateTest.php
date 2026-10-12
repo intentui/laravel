@@ -1,6 +1,20 @@
 <?php
 
 use App\Models\User;
+use Inertia\Testing\AssertableInertia as Assert;
+
+test('account deletion page provides the authenticated user for the menu and confirmation dialog', function () {
+    $user = User::factory()->create();
+
+    $this->actingAs($user)
+        ->get('/settings/delete-account')
+        ->assertOk()
+        ->assertInertia(fn (Assert $page) => $page
+            ->component('settings/delete-account')
+            ->where('auth.user.id', $user->id)
+            ->where('auth.user.email', $user->email)
+        );
+});
 
 test('profile page is displayed', function () {
     $user = User::factory()->create();

@@ -93,7 +93,7 @@ export default function Password() {
                 Save
               </Button>
 
-              {recentlySuccessful && <p className="text-muted-fg text-sm">Saved.</p>}
+              {recentlySuccessful && <p className="text-muted-foreground text-sm">Saved.</p>}
             </div>
           </Form>
         </CardContent>

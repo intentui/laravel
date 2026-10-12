@@ -1,23 +1,23 @@
-import { useState } from "react"
 import { Head, useForm } from "@inertiajs/react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { TextField } from "@/components/ui/text-field"
-import { Button } from "@/components/ui/button"
-import AppLayout from "@/layouts/app-layout"
-import SettingsLayout from "@/pages/settings/settings-layout"
-import {
-  Modal,
-  ModalBody,
-  ModalClose,
-  ModalContent,
-  ModalDescription,
-  ModalFooter,
-  ModalHeader,
-  ModalTitle,
-} from "@/components/ui/modal"
+import { useState } from "react"
 import DeleteAccountController from "@/actions/App/Http/Controllers/Settings/DeleteAccountController"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Dialog,
+  DialogBody,
+  DialogClose,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { FieldError, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { TextField } from "@/components/ui/text-field"
+import AppLayout from "@/layouts/app-layout"
+import SettingsLayout from "@/pages/settings/settings-layout"
 
 const title = "Delete Account"
 export default function DeleteAccount() {
@@ -60,21 +60,21 @@ export default function DeleteAccount() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Modal onOpenChange={setConfirmingUserDeletion} isOpen={confirmingUserDeletion}>
+          <DialogTrigger onOpenChange={setConfirmingUserDeletion} isOpen={confirmingUserDeletion}>
             <Button onPress={() => setConfirmingUserDeletion(true)} intent="danger">
               Delete Account
             </Button>
-            <ModalContent>
-              <ModalHeader>
-                <ModalTitle>Delete Account</ModalTitle>
-                <ModalDescription>
+            <Dialog>
+              <DialogHeader>
+                <DialogTitle>Delete Account</DialogTitle>
+                <DialogDescription>
                   Are you sure you want to delete your account? Once your account is deleted, all of
                   its resources and data will be permanently deleted. Please enter your password to
                   confirm you would like to permanently delete your account.
-                </ModalDescription>
-              </ModalHeader>
+                </DialogDescription>
+              </DialogHeader>
 
-              <ModalBody>
+              <DialogBody>
                 <TextField
                   value={data.password}
                   onChange={(v) => setData("password", v)}
@@ -84,15 +84,15 @@ export default function DeleteAccount() {
                   <Input type="password" placeholder="Password" />
                   <FieldError>{errors.password}</FieldError>
                 </TextField>
-              </ModalBody>
-              <ModalFooter>
-                <ModalClose>Cancel</ModalClose>
+              </DialogBody>
+              <DialogFooter>
+                <DialogClose>Cancel</DialogClose>
                 <Button intent="danger" type="submit" onPress={deleteUser} isDisabled={processing}>
                   Continue
                 </Button>
-              </ModalFooter>
-            </ModalContent>
-          </Modal>
+              </DialogFooter>
+            </Dialog>
+          </DialogTrigger>
         </CardContent>
       </Card>
     </>

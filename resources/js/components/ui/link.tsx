@@ -1,4 +1,3 @@
-import { Link as InertiaLink, type InertiaLinkProps } from "@inertiajs/react"
 import {
   Link as LinkPrimitive,
   type LinkProps as LinkPrimitiveProps,
@@ -16,12 +15,10 @@ export function Link({ className, ref, ...props }: LinkProps) {
     <LinkPrimitive
       ref={ref}
       className={cx(
-        [
-          "font-medium text-(--text)",
-          "outline-0 outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
-          "disabled:cursor-default disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
-          "href" in props && "cursor-pointer",
-        ],
+        "font-medium text-(--text)",
+        "outline-0 outline-offset-2 focus-visible:outline-2 focus-visible:outline-ring forced-colors:outline-[Highlight]",
+        "disabled:cursor-default disabled:opacity-50 forced-colors:disabled:text-[GrayText]",
+        "href" in props && "cursor-pointer",
         className,
       )}
       render={(domProps) =>
@@ -35,3 +32,5 @@ export function Link({ className, ref, ...props }: LinkProps) {
     />
   )
 }
+
+import { Link as InertiaLink, type InertiaLinkProps } from "@inertiajs/react"

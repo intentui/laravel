@@ -50,7 +50,7 @@ export default function Register() {
             <div className="text-center">
               <Link
                 href="/login"
-                className="text-base/6 text-primary-subtle-fg hover:underline sm:text-sm/6"
+                className="text-base/6 text-primary-subtle-foreground hover:underline sm:text-sm/6"
               >
                 Already registered?
               </Link>

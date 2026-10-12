@@ -27,7 +27,7 @@ export default function VerifyEmail({ status }: { status?: string }) {
               Resend Verification Email
             </Button>
 
-            <Link href="/logout" method="post" className="text-primary-subtle-fg">
+            <Link href="/logout" method="post" className="text-primary-subtle-foreground">
               Log Out
             </Link>
           </>

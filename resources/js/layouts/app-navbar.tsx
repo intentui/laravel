@@ -1,15 +1,18 @@
+import { ArrowRightEndOnRectangleIcon } from "@heroicons/react/24/outline"
 import { router, usePage } from "@inertiajs/react"
 import { useEffect, useState } from "react"
+import { Logo } from "@/components/logo"
 import { Avatar } from "@/components/ui/avatar"
 import { Button, buttonStyles } from "@/components/ui/button"
+import { Link } from "@/components/ui/link"
 import {
   Menu,
-  MenuContent,
   MenuHeader,
   MenuItem,
+  MenuLabel,
   MenuSection,
   MenuSeparator,
-  MenuLabel,
+  MenuTrigger,
 } from "@/components/ui/menu"
 import {
   Navbar,
@@ -22,11 +25,8 @@ import {
   NavbarStart,
   NavbarTrigger,
 } from "@/components/ui/navbar"
-import { Logo } from "@/components/logo"
-import type { SharedData } from "@/types/shared"
-import { Link } from "@/components/ui/link"
-import { ArrowRightEndOnRectangleIcon } from "@heroicons/react/24/outline"
 import { logout } from "@/routes"
+import type { SharedData } from "@/types/shared"
 
 const navigations = [
   {
@@ -102,15 +102,15 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
 function UserMenu() {
   const { auth } = usePage<SharedData>().props
   return (
-    <Menu>
+    <MenuTrigger>
       <Button size="sq-md" intent="plain" isCircle aria-label="Open menu">
         <Avatar src={auth.user.gravatar} size="sm" />
       </Button>
-      <MenuContent placement="bottom end" className="sm:min-w-56">
+      <Menu popover={{ placement: "bottom end" }} className="sm:min-w-56">
         <MenuSection>
           <MenuHeader separator className="relative">
             <div>{auth.user.name}</div>
-            <div className="truncate whitespace-nowrap pr-6 font-normal text-muted-fg text-sm">
+            <div className="truncate whitespace-nowrap pr-6 font-normal text-muted-foreground text-sm">
               {auth.user.email}
             </div>
           </MenuHeader>
@@ -132,7 +132,7 @@ function UserMenu() {
           <MenuLabel>Logout</MenuLabel>
           <ArrowRightEndOnRectangleIcon />
         </MenuItem>
-      </MenuContent>
-    </Menu>
+      </Menu>
+    </MenuTrigger>
   )
 }
