@@ -1,14 +1,15 @@
-import { useRef } from "react"
 import { Head, useForm } from "@inertiajs/react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useRef } from "react"
 import { Form } from "react-aria-components/Form"
-import { TextField } from "@/components/ui/text-field"
-import { Button } from "@/components/ui/button"
-import AppLayout from "@/layouts/app-layout"
-import SettingsLayout from "@/pages/settings/settings-layout"
+
 import PasswordController from "@/actions/App/Http/Controllers/Settings/PasswordController"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FieldError, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { TextField } from "@/components/ui/text-field"
+import AppLayout from "@/layouts/app-layout"
+import SettingsLayout from "@/pages/settings/settings-layout"
 
 const title = "Change Password"
 
@@ -93,7 +94,7 @@ export default function Password() {
                 Save
               </Button>
 
-              {recentlySuccessful && <p className="text-muted-foreground text-sm">Saved.</p>}
+              {recentlySuccessful && <p className="text-sm text-muted-foreground">Saved.</p>}
             </div>
           </Form>
         </CardContent>

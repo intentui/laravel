@@ -1,11 +1,12 @@
-import { cx } from "@/lib/primitive"
-import { Container } from "@/components/ui/container"
+import { type InertiaLinkProps, Link as InertiaLink } from "@inertiajs/react"
 import { ListBox, ListBoxItem, type ListBoxItemProps } from "react-aria-components/ListBox"
-import ProfileController from "@/actions/App/Http/Controllers/Settings/ProfileController"
-import PasswordController from "@/actions/App/Http/Controllers/Settings/PasswordController"
+
 import AppearanceController from "@/actions/App/Http/Controllers/Settings/AppearanceController"
 import DeleteAccountController from "@/actions/App/Http/Controllers/Settings/DeleteAccountController"
-import { type InertiaLinkProps, Link as InertiaLink } from "@inertiajs/react"
+import PasswordController from "@/actions/App/Http/Controllers/Settings/PasswordController"
+import ProfileController from "@/actions/App/Http/Controllers/Settings/ProfileController"
+import { Container } from "@/components/ui/container"
+import { cx } from "@/lib/primitive"
 
 export default function SettingsLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -41,11 +41,14 @@ jobs:
       - name: Run Pint
         run: vendor/bin/pint
 
-      - name: Format Frontend
-        run: npm run format
+      - name: Build Assets
+        run: npm run build
 
-      - name: Lint Frontend
-        run: npm run lint
+      - name: Check Frontend
+        run: npm run check
+
+      - name: Test Frontend Toolchain
+        run: npm test
 
       # - name: Commit Changes
       #   uses: stefanzweifel/git-auto-commit-action@v5

@@ -1,6 +1,7 @@
 import { ArrowRightEndOnRectangleIcon } from "@heroicons/react/24/outline"
 import { router, usePage } from "@inertiajs/react"
 import { useEffect, useState } from "react"
+
 import { Logo } from "@/components/logo"
 import { Avatar } from "@/components/ui/avatar"
 import { Button, buttonStyles } from "@/components/ui/button"
@@ -110,7 +111,7 @@ function UserMenu() {
         <MenuSection>
           <MenuHeader separator className="relative">
             <div>{auth.user.name}</div>
-            <div className="truncate whitespace-nowrap pr-6 font-normal text-muted-foreground text-sm">
+            <div className="truncate pr-6 text-sm font-normal whitespace-nowrap text-muted-foreground">
               {auth.user.email}
             </div>
           </MenuHeader>

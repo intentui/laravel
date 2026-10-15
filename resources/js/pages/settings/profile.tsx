@@ -1,14 +1,15 @@
-import AppLayout from "@/layouts/app-layout"
 import { Head, useForm, usePage } from "@inertiajs/react"
-import type { SharedData } from "@/types/shared"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Form } from "react-aria-components/Form"
-import { TextField } from "@/components/ui/text-field"
 import { Link } from "@inertiajs/react"
+import { Form } from "react-aria-components/Form"
+
 import { Button } from "@/components/ui/button"
-import SettingsLayout from "@/pages/settings/settings-layout"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FieldError, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { TextField } from "@/components/ui/text-field"
+import AppLayout from "@/layouts/app-layout"
+import SettingsLayout from "@/pages/settings/settings-layout"
+import type { SharedData } from "@/types/shared"
 
 interface Props {
   mustVerifyEmail: boolean
@@ -78,7 +79,7 @@ export default function Profile({ mustVerifyEmail, status }: Props) {
                 </p>
 
                 {status === "verification-link-sent" && (
-                  <div className="mt-2 font-medium text-base/6 text-success-subtle-foreground hover:underline sm:text-sm/6">
+                  <div className="mt-2 text-base/6 font-medium text-success-subtle-foreground hover:underline sm:text-sm/6">
                     A new verification link has been sent to your email address.
                   </div>
                 )}
@@ -89,7 +90,7 @@ export default function Profile({ mustVerifyEmail, status }: Props) {
               <Button type="submit" isDisabled={processing}>
                 Save
               </Button>
-              {recentlySuccessful && <p className="text-muted-foreground text-sm">Saved.</p>}
+              {recentlySuccessful && <p className="text-sm text-muted-foreground">Saved.</p>}
             </div>
           </Form>
         </CardContent>

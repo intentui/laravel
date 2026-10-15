@@ -1,7 +1,8 @@
+import type { PropsWithChildren, ReactNode } from "react"
+
 import { Flash } from "@/components/flash"
 import { Logo } from "@/components/logo"
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import type { PropsWithChildren, ReactNode } from "react"
 import { Link } from "@/components/ui/link"
 
 interface GuestLayoutProps {

@@ -18,7 +18,9 @@ import {
   SubmenuTrigger as SubmenuTriggerPrimitive,
 } from "react-aria-components/Menu"
 import { tv, type VariantProps } from "tailwind-variants"
+
 import { cx } from "@/lib/primitive"
+
 import {
   DropdownDescription,
   DropdownKeyboard,
@@ -58,7 +60,7 @@ interface MenuProps<T> extends MenuPrimitiveProps<T>, Pick<PopoverProps, "placem
 }
 
 const menuStyles = tv({
-  base: "grid max-h-[inherit] grid-cols-[auto_minmax(0,1fr)] gap-y-1 overflow-y-auto overflow-x-hidden overscroll-contain p-1 outline-hidden [clip-path:inset(0_0_0_0_round_calc(var(--radius-xl)-(--spacing(1))))] [&>[data-slot=menu-section]+[data-slot=menu-section]:not([class*='mt-']):not([class*='my-'])]:mt-3",
+  base: "grid max-h-[inherit] grid-cols-[auto_minmax(0,1fr)] gap-y-1 overflow-x-hidden overflow-y-auto overscroll-contain p-1 outline-hidden [clip-path:inset(0_0_0_0_round_calc(var(--radius-xl)-(--spacing(1))))] [&>[data-slot=menu-section]+[data-slot=menu-section]:not([class*='mt-']):not([class*='my-'])]:mt-3",
 })
 
 const Menu = <T extends object>({ className, placement, popover, ...props }: MenuProps<T>) => {
@@ -117,7 +119,7 @@ const MenuItem = ({ className, intent, children, ...props }: MenuItemProps) => {
           {values.hasSubmenu && (
             <ChevronRightIcon
               data-slot="chevron"
-              className="-translate-y-1/2 absolute end-0 size-4"
+              className="absolute end-0 size-4 -translate-y-1/2"
               style={{
                 top: "calc(var(--spacing) * 3)",
               }}

@@ -1,5 +1,5 @@
-import { composeRenderProps } from "react-aria-components/composeRenderProps"
 import { cn, type ClassNameValue } from "cn"
+import { composeRenderProps } from "react-aria-components/composeRenderProps"
 
 type Render<T> = string | ((v: T) => string) | undefined
 

@@ -1,5 +1,6 @@
 import { Head, useForm } from "@inertiajs/react"
 import { useState } from "react"
+
 import DeleteAccountController from "@/actions/App/Http/Controllers/Settings/DeleteAccountController"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"

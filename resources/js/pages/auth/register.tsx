@@ -1,11 +1,12 @@
-import GuestLayout from "@/layouts/guest-layout"
 import { Form, Head } from "@inertiajs/react"
+
 import { Button } from "@/components/ui/button"
-import { Link } from "@/components/ui/link"
-import { TextField } from "@/components/ui/text-field"
-import { Loader } from "@/components/ui/loader"
 import { FieldError, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { Link } from "@/components/ui/link"
+import { Loader } from "@/components/ui/loader"
+import { TextField } from "@/components/ui/text-field"
+import GuestLayout from "@/layouts/guest-layout"
 
 export default function Register() {
   return (

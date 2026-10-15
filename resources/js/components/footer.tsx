@@ -1,9 +1,10 @@
 import type { SVGProps } from "react"
+
 import { Button } from "@/components/ui/button"
+import { FieldError } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { Link } from "@/components/ui/link"
 import { TextField } from "@/components/ui/text-field"
-import { Input } from "@/components/ui/input"
-import { FieldError } from "@/components/ui/field"
 
 const navigation = {
   solutions: [
@@ -105,13 +106,13 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="font-semibold text-foreground text-sm leading-6">Solutions</h3>
+                <h3 className="text-sm leading-6 font-semibold text-foreground">Solutions</h3>
                 <ul className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground text-sm leading-6 hover:text-foreground"
+                        className="text-sm leading-6 text-muted-foreground hover:text-foreground"
                       >
                         {item.name}
                       </Link>
@@ -120,13 +121,13 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="font-semibold text-foreground text-sm leading-6">Support</h3>
+                <h3 className="text-sm leading-6 font-semibold text-foreground">Support</h3>
                 <ul className="mt-6 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground text-sm leading-6 hover:text-foreground"
+                        className="text-sm leading-6 text-muted-foreground hover:text-foreground"
                       >
                         {item.name}
                       </Link>
@@ -137,13 +138,13 @@ export function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="font-semibold text-foreground text-sm leading-6">Company</h3>
+                <h3 className="text-sm leading-6 font-semibold text-foreground">Company</h3>
                 <ul className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground text-sm leading-6 hover:text-foreground"
+                        className="text-sm leading-6 text-muted-foreground hover:text-foreground"
                       >
                         {item.name}
                       </Link>
@@ -152,13 +153,13 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="font-semibold text-foreground text-sm leading-6">Legal</h3>
+                <h3 className="text-sm leading-6 font-semibold text-foreground">Legal</h3>
                 <ul className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground text-sm leading-6 hover:text-foreground"
+                        className="text-sm leading-6 text-muted-foreground hover:text-foreground"
                       >
                         {item.name}
                       </Link>
@@ -170,10 +171,10 @@ export function Footer() {
           </div>
           <div className="mt-10 flex flex-col xl:mt-0">
             <div className="mb-6 flex-1">
-              <h3 className="font-semibold text-foreground text-sm leading-6">
+              <h3 className="text-sm leading-6 font-semibold text-foreground">
                 Subscribe to our newsletter
               </h3>
-              <p className="mt-2 text-muted-foreground text-sm leading-6">
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 The latest news, articles, and resources, sent to your inbox weekly.
               </p>
               <form className="mt-6 sm:flex sm:max-w-md">
@@ -194,7 +195,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-slate-900/10 border-t pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
+        <div className="mt-16 border-t border-slate-900/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
           <div className="flex space-x-6 md:order-2">
             {navigation.social.map((item) => (
               <Link
@@ -207,7 +208,7 @@ export function Footer() {
               </Link>
             ))}
           </div>
-          <p className="mt-8 text-muted-foreground text-xs leading-5 md:order-1 md:mt-0">
+          <p className="mt-8 text-xs leading-5 text-muted-foreground md:order-1 md:mt-0">
             &copy; 2020 Inertia.ts by{" "}
             <Link
               target="_blank"

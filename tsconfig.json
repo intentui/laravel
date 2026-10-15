@@ -27,6 +27,6 @@
         "node_modules",
         "public",
         "resources/js/routes/**/*.ts",
-        "resources/js/actions/**/*.tsx"
+        "resources/js/actions/**/*.ts"
     ]
 }

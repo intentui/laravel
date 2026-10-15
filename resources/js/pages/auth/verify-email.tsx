@@ -1,16 +1,17 @@
-import GuestLayout from "@/layouts/guest-layout"
 import { Head, Form } from "@inertiajs/react"
-import { Button } from "@/components/ui/button"
 import { Link } from "@inertiajs/react"
-import { Loader } from "@/components/ui/loader"
+
 import EmailVerificationNotificationController from "@/actions/App/Http/Controllers/Auth/EmailVerificationNotificationController"
+import { Button } from "@/components/ui/button"
+import { Loader } from "@/components/ui/loader"
+import GuestLayout from "@/layouts/guest-layout"
 
 export default function VerifyEmail({ status }: { status?: string }) {
   return (
     <>
       <Head title="Email Verification" />
       {status === "verification-link-sent" && (
-        <div className="mb-4 font-medium text-green-600 text-sm">
+        <div className="mb-4 text-sm font-medium text-green-600">
           A new verification link has been sent to the email address you provided during
           registration.
         </div>

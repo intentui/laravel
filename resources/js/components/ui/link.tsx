@@ -2,11 +2,11 @@ import {
   Link as LinkPrimitive,
   type LinkProps as LinkPrimitiveProps,
 } from "react-aria-components/Link"
+
 import { cx } from "@/lib/primitive"
 
 export interface LinkProps
-  extends LinkPrimitiveProps,
-    Omit<InertiaLinkProps, keyof LinkPrimitiveProps> {
+  extends LinkPrimitiveProps, Omit<InertiaLinkProps, keyof LinkPrimitiveProps> {
   ref?: React.RefObject<HTMLAnchorElement>
 }
 

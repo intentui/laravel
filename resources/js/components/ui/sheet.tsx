@@ -1,5 +1,6 @@
 "use client"
 
+import type { DialogProps } from "react-aria-components/Dialog"
 import {
   Sheet as SheetPrimitive,
   SheetBackdrop,
@@ -9,7 +10,9 @@ import {
   type SheetProps as SheetPrimitiveProps,
   SheetTrigger as SheetTriggerPrimitive,
 } from "react-aria-components/Sheet"
+
 import { cx } from "@/lib/primitive"
+
 import {
   DialogBody,
   DialogClose,
@@ -18,7 +21,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./dialog"
-import type { DialogProps } from "react-aria-components/Dialog"
 
 const SheetTrigger = SheetTriggerPrimitive
 
@@ -36,7 +38,8 @@ const positionVariants = {
 }
 
 interface SheetProps
-  extends Omit<SheetOverlayProps, "children">,
+  extends
+    Omit<SheetOverlayProps, "children">,
     Pick<SheetPrimitiveProps, "swipeAnimation" | "swipeAnimationRange"> {
   isFloat?: boolean
   children?: DialogProps["children"]
@@ -65,7 +68,7 @@ const Sheet = ({
     >
       <SheetBackdrop
         swipeAnimation="sheet-backdrop"
-        className="entering:fade-in exiting:fade-out entering:animate-in exiting:animate-out bg-black/15 entering:duration-300 exiting:duration-300"
+        className="bg-black/15 entering:animate-in entering:duration-300 entering:fade-in exiting:animate-out exiting:duration-300 exiting:fade-out"
         swipeAnimationRange={snapPoints ? { start: snapPoints.length - 1 } : undefined}
       />
       <SheetPrimitive
@@ -83,7 +86,7 @@ const Sheet = ({
         {!preventDismissal && position === "bottom" && (
           <div
             aria-hidden="true"
-            className="-translate-x-1/2 pointer-events-none absolute top-2 left-1/2 h-1 w-10 rounded-full bg-foreground/30"
+            className="pointer-events-none absolute top-2 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-foreground/30"
           />
         )}
         <SheetContentPrimitive

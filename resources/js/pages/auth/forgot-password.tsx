@@ -1,11 +1,12 @@
-import GuestLayout from "@/layouts/guest-layout"
 import { Head, Form } from "@inertiajs/react"
-import { Button } from "@/components/ui/button"
-import { TextField } from "@/components/ui/text-field"
-import { Loader } from "@/components/ui/loader"
+
 import PasswordResetLinkController from "@/actions/App/Http/Controllers/Auth/PasswordResetLinkController"
+import { Button } from "@/components/ui/button"
 import { FieldError, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { Loader } from "@/components/ui/loader"
+import { TextField } from "@/components/ui/text-field"
+import GuestLayout from "@/layouts/guest-layout"
 
 interface ForgotPasswordProps {
   status: string
@@ -15,7 +16,7 @@ export default function ForgotPassword({ status }: ForgotPasswordProps) {
   return (
     <>
       <Head title="Forgot Password" />
-      {status && <div className="font-medium text-sm text-success">{status}</div>}
+      {status && <div className="text-sm font-medium text-success">{status}</div>}
 
       <Form className="mt-4 space-y-4" {...PasswordResetLinkController.store.form()}>
         {({ processing, errors }) => (

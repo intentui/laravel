@@ -1,11 +1,12 @@
-import GuestLayout from "@/layouts/guest-layout"
 import { Head, Form } from "@inertiajs/react"
-import { Button } from "@/components/ui/button"
-import { TextField } from "@/components/ui/text-field"
-import { Loader } from "@/components/ui/loader"
+
 import NewPasswordController from "@/actions/App/Http/Controllers/Auth/NewPasswordController"
+import { Button } from "@/components/ui/button"
 import { FieldError, Label } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { Loader } from "@/components/ui/loader"
+import { TextField } from "@/components/ui/text-field"
+import GuestLayout from "@/layouts/guest-layout"
 
 interface ResetPasswordProps {
   token: string

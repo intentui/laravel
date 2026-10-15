@@ -10,7 +10,9 @@ import {
   ListBox as ListBoxPrimitive,
 } from "react-aria-components/ListBox"
 import { twJoin, twMerge } from "tailwind-merge"
+
 import { cx } from "@/lib/primitive"
+
 import {
   DropdownDescription,
   DropdownLabel,
@@ -112,7 +114,7 @@ const ListBoxItem = <T extends object>({ children, className, ...props }: ListBo
 const ListBoxSection = <T extends object>({ className, ...props }: DropdownSectionProps<T>) => {
   return (
     <DropdownSection
-      className={twMerge("*:data-[slot=list-box-item]:last:-mb-1.5 gap-y-1", className)}
+      className={twMerge("gap-y-1 *:data-[slot=list-box-item]:last:-mb-1.5", className)}
       {...props}
     />
   )

@@ -1,4 +1,5 @@
 import { XMarkIcon } from "@heroicons/react/20/solid"
+import { cn } from "cn"
 import { Button as PrimitiveButton } from "react-aria-components/Button"
 import {
   DialogTrigger as DialogTriggerPrimitive,
@@ -6,11 +7,12 @@ import {
   type DialogProps as DialogPrimitiveProps,
 } from "react-aria-components/Dialog"
 import { Heading, type HeadingProps } from "react-aria-components/Heading"
-import type { TextProps } from "react-aria-components/Text"
-import { cn } from "cn"
-import { cx } from "@/lib/primitive"
-import { Button, type ButtonProps } from "./button"
 import { Modal, ModalOverlay, type ModalOverlayProps } from "react-aria-components/Modal"
+import type { TextProps } from "react-aria-components/Text"
+
+import { cx } from "@/lib/primitive"
+
+import { Button, type ButtonProps } from "./button"
 
 export const DialogTrigger = DialogTriggerPrimitive
 
@@ -29,7 +31,8 @@ const sizes = {
 }
 
 interface DialogProps
-  extends Omit<ModalOverlayProps, "children">,
+  extends
+    Omit<ModalOverlayProps, "children">,
     Pick<DialogPrimitiveProps, "aria-label" | "aria-labelledby" | "role" | "children"> {
   size?: keyof typeof sizes
   closeButton?: boolean

@@ -6,7 +6,9 @@ import {
 } from "react-aria-components/CheckboxGroup"
 import { composeRenderProps } from "react-aria-components/composeRenderProps"
 import { twMerge } from "tailwind-merge"
+
 import { cx } from "@/lib/primitive"
+
 import { Label } from "./field"
 
 export function CheckboxGroup({ className, ...props }: CheckboxGroupProps) {
@@ -57,20 +59,20 @@ export function Checkbox({ className, children, ...props }: CheckboxProps) {
               <span
                 data-slot="indicator"
                 className={twMerge([
-                  "relative inset-ring inset-ring-input isolate flex shrink-0 items-center justify-center rounded bg-(--control-bg,transparent) text-background transition group-hover:inset-ring-muted-foreground/30",
+                  "relative isolate flex shrink-0 items-center justify-center rounded bg-(--control-bg,transparent) text-background inset-ring inset-ring-input transition group-hover:inset-ring-muted-foreground/30",
                   "sm:size-4 sm:*:data-[slot=check-indicator]:size-3.5",
                   "size-4.5 *:data-[slot=check-indicator]:size-4",
                   "in-disabled:bg-muted",
                   (isSelected || isIndeterminate) && [
-                    "inset-ring-(--checkbox-ring,var(--color-ring)) bg-(--checkbox-bg,var(--color-primary)) text-(--checkbox-foreground,var(--color-primary-foreground))",
+                    "bg-(--checkbox-bg,var(--color-primary)) text-(--checkbox-foreground,var(--color-primary-foreground)) inset-ring-(--checkbox-ring,var(--color-ring))",
                     "group-invalid:inset-ring/70 group-invalid:bg-danger group-invalid:text-danger-foreground dark:group-invalid:inset-ring-danger-subtle-foreground/70",
                   ],
                   isFocusVisible && [
-                    "inset-ring-(--checkbox-ring,var(--color-ring)) ring-(--checkbox-ring,var(--color-ring))/20 ring-3",
-                    "group-invalid:inset-ring-danger-subtle-foreground/70 group-invalid:text-danger-foreground group-invalid:ring-danger-subtle-foreground/20",
+                    "ring-3 ring-(--checkbox-ring,var(--color-ring))/20 inset-ring-(--checkbox-ring,var(--color-ring))",
+                    "group-invalid:text-danger-foreground group-invalid:ring-danger-subtle-foreground/20 group-invalid:inset-ring-danger-subtle-foreground/70",
                   ],
                   isInvalid &&
-                    "inset-ring-danger-subtle-foreground/70 bg-danger-subtle/5 text-danger-foreground ring-danger-subtle-foreground/20 group-hover:inset-ring-danger-subtle-foreground/70",
+                    "bg-danger-subtle/5 text-danger-foreground ring-danger-subtle-foreground/20 inset-ring-danger-subtle-foreground/70 group-hover:inset-ring-danger-subtle-foreground/70",
                 ])}
               >
                 {indicator}

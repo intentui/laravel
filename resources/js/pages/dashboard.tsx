@@ -1,7 +1,8 @@
-import AppLayout from "@/layouts/app-layout"
 import { Head } from "@inertiajs/react"
+
 import { CardHeader } from "@/components/ui/card"
 import { Container } from "@/components/ui/container"
+import AppLayout from "@/layouts/app-layout"
 import type { SharedData } from "@/types/shared"
 
 export default function Dashboard({ auth }: SharedData) {

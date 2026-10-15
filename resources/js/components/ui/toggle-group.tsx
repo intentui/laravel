@@ -7,12 +7,15 @@ import {
 } from "react-aria-components/ToggleButtonGroup"
 import { twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
+
 import { cx } from "@/lib/primitive"
 
 type ToggleSize = "xs" | "sm" | "md" | "lg" | "sq-xs" | "sq-sm" | "sq-md" | "sq-lg"
 
-interface ToggleGroupContextValue
-  extends Pick<ToggleButtonGroupProps, "selectionMode" | "orientation"> {
+interface ToggleGroupContextValue extends Pick<
+  ToggleButtonGroupProps,
+  "selectionMode" | "orientation"
+> {
   size?: ToggleSize
 }
 
@@ -120,7 +123,7 @@ const toggleGroupItemStyles = tv({
         "touch-target size-11 *:data-[slot=loader]:size-5 sm:size-10 sm:*:data-[slot=loader]:size-5 *:[svg]:size-5 sm:*:[svg]:size-5",
     },
     isSelected: {
-      true: "inset-ring-foreground/20 bg-(--toggle-selected-bg) text-(--toggle-selected-foreground) [--toggle-icon:var(--primary-foreground)] hover:bg-(--toggle-selected-bg)/90",
+      true: "bg-(--toggle-selected-bg) text-(--toggle-selected-foreground) inset-ring-foreground/20 [--toggle-icon:var(--primary-foreground)] hover:bg-(--toggle-selected-bg)/90",
     },
     isFocused: {
       true: "not-selected:bg-(--toggle-focused-bg) not-selected:text-(--toggle-focused-foreground) not-selected:[--toggle-icon:var(--toggle-focused-foreground)]",

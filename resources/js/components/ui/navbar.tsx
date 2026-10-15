@@ -2,9 +2,11 @@ import { Bars2Icon } from "@heroicons/react/20/solid"
 import { cn, twJoin } from "cn"
 import { LayoutGroup, motion } from "motion/react"
 import { createContext, use, useCallback, useId, useMemo, useState } from "react"
+
 import { Link, type LinkProps } from "@/components/ui/link"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cx } from "@/lib/primitive"
+
 import { Button, type ButtonProps } from "./button"
 import { Separator } from "./separator"
 import { Sheet, SheetBody, SheetTrigger } from "./sheet"
@@ -237,8 +239,8 @@ const NavbarItem = ({ className, isCurrent, ...props }: NavbarItemProps) => {
               transition={{ type: "spring", stiffness: 500, damping: 40 }}
               className={twJoin(
                 "absolute rounded-full bg-foreground [--gutter:--spacing(0.5)]",
-                "-start-4 inset-y-[calc(var(--navbar-gutter)---spacing(0.5))] w-(--gutter) md:inset-y-auto md:w-auto",
-                "md:-bottom-[calc(var(--navbar-gutter)+1px)] md:inset-x-2 md:h-(--gutter)",
+                "inset-y-[calc(var(--navbar-gutter)---spacing(0.5))] -start-4 w-(--gutter) md:inset-y-auto md:w-auto",
+                "md:inset-x-2 md:-bottom-[calc(var(--navbar-gutter)+1px)] md:h-(--gutter)",
               )}
             />
           )}

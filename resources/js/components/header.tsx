@@ -1,4 +1,5 @@
 import { twMerge } from "tailwind-merge"
+
 import { Container } from "@/components/ui/container"
 
 interface HeaderProps extends React.ComponentProps<"div"> {
@@ -14,7 +15,7 @@ export function Header({ title, className, ref, ...props }: HeaderProps) {
       {...props}
     >
       <Container>
-        <h1 className="font-semibold text-xl tracking-tight sm:text-2xl">{title}</h1>
+        <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">{title}</h1>
       </Container>
     </div>
   )

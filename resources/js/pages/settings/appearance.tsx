@@ -1,8 +1,9 @@
+import { Head } from "@inertiajs/react"
+
+import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import AppLayout from "@/layouts/app-layout"
 import SettingsLayout from "@/pages/settings/settings-layout"
-import { Head } from "@inertiajs/react"
-import { ThemeSwitcher } from "@/components/theme-switcher"
 
 const title = "Appearance"
 
